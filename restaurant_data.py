@@ -1,5 +1,5 @@
-from cmath import nan
 import pandas as pd
+import numpy as np
 import os
 pre = os.path.dirname(os.path.realpath(__file__))
 fname = 'south yarra refined data.xlsx'
@@ -13,9 +13,10 @@ restaurant_type = df['Type'].tolist()
 restaurant_address = df['Address'].tolist()
 restaurant_suburb = df['Suburb'].tolist()
 restaurant_meal_type = df['Meal Type'].tolist()
-restaurant_dietary_requirements = df['Dietary Requirements Available'].tolist()
+restaurant_dietary_requirements = df['Dietary Requirements Available'].replace({np.nan: 'None'}).tolist()
 restaurant_short_description = df['Short Description'].tolist()
 all_restaurant_data = []
+
 for name in restaurant_names:
     all_restaurant_data.append([name])
 index = 0
