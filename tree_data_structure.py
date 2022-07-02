@@ -36,7 +36,7 @@ class TreeNode:
 
   def show_children_dict(self):
     print(self.children)
-  # finish logic for adding restaurants to tree
+  
   
   def add_restaurant(self,list):
     for restaurant in list:
@@ -54,52 +54,40 @@ class TreeNode:
           for price in parameters_dict['price_point']:
              price.split()
              self.children[category][meal_type][dietary_requirement][price].append(Restaurant_object(restaurant))
-
-
-    
+  def find_category(self, target):
+    possible_categories = []
+    for key in self.children.keys():
+      if target in key:
+        possible_categories.append(key)
+    return possible_categories
+  def find_meal_type(self,category, target):
+    possible_meal_types = []
+    for key in self.children[category].keys():
+      if target in key:
+        possible_meal_types.append(key)
+    return possible_meal_types
+  def find_dietary_requirements(self, category, meal_type, target):
+    possible_dietary_requirements = []
+    for key in self.children[category][meal_type].keys():
+      if target in key:
+        possible_dietary_requirements.append(key)
+    return possible_dietary_requirements
+  
+  def find_price_point(self, category, meal_type, dietary_requirement, target):
+    price_point_string = ''
+    target = int(target)
+    for i in range(target):
+      price_point_string+='$'
+    return price_point_string
+  def find_restaurants(self, category, meal_type, dietary_requirement, price_point):
+    return self.children[category][meal_type][dietary_requirement][price_point]  
   
 
 
     
-  def remove_child(self, child_node):
-    # removes parent-child relationship
-    print("Removing " + child_node.value + " from " + self.value)
-    self.children = [child for child in self.children 
-                     if child is not child_node]
+  
  
-  def traverse(self):
-    # moves through each node referenced from self downwards
-    nodes_to_visit = [self]
-    while len(nodes_to_visit) > 0:
-      current_node = nodes_to_visit.pop()
-      print(current_node.value)
-      nodes_to_visit += current_node.children
 
 
-def bfs(root_node, goal_value):
 
-  # initialize frontier queue
-  path_queue = deque()
-
-  # add root path to the frontier
-  initial_path = [root_node]
-  path_queue.appendleft(initial_path)
   
-  # search loop that continues as long as
-  # there are paths in the frontier
-  while path_queue:
-    # get the next path and node 
-    # then output node value
-    current_path = path_queue.pop()
-    current_node = current_path[-1]
-    print(f"Searching node with value: {current_node.value}")
-
-    # check if the goal node is found
-    if current_node.value == goal_value:
-      return current_path
-
-    # add paths to children to the  frontier
-    for child in current_node.children:
-      new_path = current_path[:]
-      new_path.append(child)
-      path_queue.appendleft(new_path) 
