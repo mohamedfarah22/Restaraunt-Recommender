@@ -1,3 +1,6 @@
+from turtle import title
+
+
 def welcome_to_restaurant_recommender():
     print('''-------------------------------------------\n\n     Weclome to Restaurant Recommender!!! \n \n -------------------------------------------''')
     
@@ -10,20 +13,15 @@ def remove_duplicates(list):
             continue
         new_list.append(item)
     return new_list    
-def add_restaurants_to_tree(all_restaurants,TreeNode):
-  for restaurant in all_restaurants:
-    category = restaurant[3]
-    meal_type = restaurant[7]
-    meal_type_list = meal_type.split(',')
-    dietary_requirements = restaurant[8]
-    dietary_requirements_list = dietary_requirements.split(',')
-    price = restaurant[2]
-    for meal in meal_type:
-        if meal not in meal_type_list:
-           meal_type_list.append(meal)
-    for dietary_requirement in dietary_requirements_list:
-        if dietary_requirement not in dietary_requirements_list:
-           dietary_requirements_list.append(dietary_requirement)
-    
-
-    
+def get_user_category_input():
+    category = input('What category of food would you like to eat: ')
+    return  category.capitalize()
+def get_meal_type():
+    meal_type = input('What meal type are you having: ')
+    return meal_type.capitalize()
+def get_dietary_requirement():
+    dietary_requirement= input('What is your dietary requirements?: ')  
+    return dietary_requirement.capitalize()
+def get_price_input():
+    price_point = input('What is your desired price point? (Choose a number from 1 to 5 where 1 is the cheapest and 5 is the most expensive): ')
+    return price_point
