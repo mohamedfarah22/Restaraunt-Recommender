@@ -26,7 +26,7 @@ Organising Collected data
 Retrieiving Data
 </h4>
 <p>
-The tree data structure has a key in feature for retrieval making it efficient with time complexity of O(NlogN). User is prompted to type the beginning of a category and is continuously prompted until just 1 value is remaining. This is done for each filter untill a list of possible restaurants are shown in the terminal.
+The tree data structure has a key in feature for retrieval making it efficient with time complexity of O(NlogN). User is prompted to type the beginning of a category and is continuously prompted until just 1 value is remaining. This is done for each filter untill a list of possible restaurants are shown in the terminal. The program will continue until at least 1 restaurant is recommended for the user.
 
 </p>
   
