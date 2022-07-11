@@ -21,3 +21,12 @@ Organising Collected data
 <p>
  Data structure selection process for storing restaurant data was chosen as a Tree Data structure, this was designed with the end in mind meaning restaurants were placed in branches that were filtered by category, meal type, dietary requirement and price point. This was used for efficiency of retrieving data for the user. Methods were constructured in the tree data structure that populate the tree with all possible requirements for each category. Methods were also constructed in the tree data structure to store restaurants in appropriate 'categories' for ease of retrieval.
  </p>
+
+<h4>
+Retrieivng Data
+</h4>
+<p>
+The tree data structure has a key in feature for retrieval making it efficient with time complexity of O(NlogN). User is prompted to type the beginning of a category and is continuously prompted until just 1 value is remaining. This is done for each filter untill a list of possible restaurants are shown in the terminal.
+
+</p>
+  
