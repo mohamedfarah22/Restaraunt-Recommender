@@ -1,6 +1,4 @@
-<head>
-Restaurant Recommender
-</head>
+
 <h1>
   Program Summary
 </h1>
