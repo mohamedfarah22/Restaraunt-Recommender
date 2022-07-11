@@ -73,12 +73,13 @@ class TreeNode:
         possible_dietary_requirements.append(key)
     return possible_dietary_requirements
   
-  def find_price_point(self, category, meal_type, dietary_requirement, target):
+  def find_price_point(self,target):
     price_point_string = ''
     target = int(target)
     for i in range(target):
       price_point_string+='$'
     return price_point_string
+  
   def find_restaurants(self, category, meal_type, dietary_requirement, price_point):
     return self.children[category][meal_type][dietary_requirement][price_point]  
   
