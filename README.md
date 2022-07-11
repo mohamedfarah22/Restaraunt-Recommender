@@ -13,4 +13,11 @@ Data Collection Process
 </h4>
 <p>
 The data collection process involved using google maps API places to and storing restaurants in the South Yarra, Melbourne region in an xlsx file (south yarra refined data). The excel files had the following columns: Name, rating, price, category, address, suburb, available meal types, available dietary requirements and short description). This data was read from 'south yarra refined data.xlsx' using the pandas module where each column was stored as a list object. This formed the basis of restaurant data that was to be used in the program.
-  </p>
+ </p>
+ 
+<h4>
+Organising Collected data
+</h4>
+<p>
+ Data structure selection process for storing restaurant data was chosen as a Tree Data structure, this was designed with the end in mind meaning restaurants were placed in branches that were filtered by category, meal type, dietary requirement and price point. This was used for efficiency of retrieving data for the user. Methods were constructured in the tree data structure that populate the tree with all possible requirements for each category. Methods were also constructed in the tree data structure to store restaurants in appropriate 'categories' for ease of retrieval.
+ </p>
